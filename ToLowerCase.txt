@@ -1,0 +1,46 @@
+Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
+
+ 
+
+Example 1:
+
+Input: "Hello"
+Output: "hello"
+
+Example 2:
+
+Input: "here"
+Output: "here"
+
+Example 3:
+
+Input: "LOVELY"
+Output: "lovely"
+
+
+
+
+class Solution {
+public:
+    string toLowerCase(string str) {
+        
+        int lowerCaseOffset = (int)'a' - (int)'A'; // this value is 32 is the difference between upper case letters and lowercase in ASCII table
+        string result = "";
+        
+        for(int i = 0; i < str.length(); i++)
+        {
+            if((int)str[i] >= (int)'A' && (int)str[i] <= (int)'Z')
+            {
+                int characterConversion = lowerCaseOffset + (int)str[i];
+                result += (char)characterConversion;
+            }
+            else
+            {
+                result += str[i];
+            }           
+        }
+               
+        return result;
+        
+    }
+};
