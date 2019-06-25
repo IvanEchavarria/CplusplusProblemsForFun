@@ -26,7 +26,7 @@ Note:
     Each words[i] will have length in range [1, 12].
     words[i] will only consist of lowercase letters.
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
@@ -34,7 +34,7 @@ public:
     
     int uniqueMorseRepresentations(vector<string>& words) 
     {
-         
+         //Vector containing all mores code - codes
         vector<string> morse {".-","-...","-.-.","-..",".","..-.","--.",
 
                         "....","..",".---","-.-",".-..","--","-.","---",".--.",
@@ -56,7 +56,7 @@ public:
         {
             for(int j = 0; j < words[i].length(); j++)
             {
-               tempMorseWord += characterConverter[words[i][j]];  //create morse word
+               tempMorseWord += characterConverter[words[i][j]];  //create word from morse code using dictionary
             }          
             
             cout<< tempMorseWord << endl;

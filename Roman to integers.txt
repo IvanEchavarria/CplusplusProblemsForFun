@@ -46,7 +46,7 @@ Input: "MCMXCIV"
 Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
@@ -62,9 +62,9 @@ public:
 
                     if(CheckNextChar(i, s.length()))
                     {
-                        if(s[i+1] == 'V')
+                        if(s[i+1] == 'V')   
                         {
-                            result += 4;
+                            result += 4; 	//Special case based on the chart above, we take the next character and move one extra space ahead
                             i++;
                         }
                         else if(s[i+1] == 'X')
@@ -74,7 +74,7 @@ public:
                         }
                          else
                         {
-                            result += 1;
+                            result += 1;	//this case is repeated below, if there is a next character but no special case we still need to add the value
                         }   
                     }
                     else
@@ -133,7 +133,7 @@ public:
                break;
                     
                case 'V': 
-                    result += 5;
+                    result += 5;       
                break;
                case 'L': 
                     result += 50;
@@ -151,6 +151,7 @@ public:
         
     }
     
+// if there is an special case we check there is a next value to avoid outofbounds exception
     bool CheckNextChar(int indexAt, int stringLength)
     {
         if( indexAt+1 < stringLength)

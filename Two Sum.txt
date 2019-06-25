@@ -9,6 +9,7 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
@@ -18,27 +19,27 @@ public:
 
     int complement;
     
-    // map number and index    
+    // map number and index as we see then     
     map<int, int> hashTable;
         
     for(int i = 0; i < nums.size() ; i++)
     {
-        int complement = target - nums[i];
+        int complement = target - nums[i]; // Solving for target ; target = complement + num
         
-        if(hashTable.count(complement))
+        if(hashTable.count(complement))   //Check if we have added a complement number on the hashtable already
         {
-            vector<int> answer = {hashTable[complement], i};
+            vector<int> answer = {hashTable[complement], i}; // return the indices values of were we found these numbers
             
             return answer;
         }
         else
         {
-            hashTable[nums[i]] = i;
+            hashTable[nums[i]] = i;     // This may be a possible complement so we add it to the table with its index
         }
          
     }           
      
-      vector<int> answer = {-1, -1}; 
+      vector<int> answer = {-1, -1};  // If we didnt find two numbers then we return dummy vector.
         
       return  answer;
             

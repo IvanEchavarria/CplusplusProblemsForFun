@@ -17,7 +17,7 @@ Example 3:
 Input: "LOVELY"
 Output: "lovely"
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 class Solution {
@@ -29,10 +29,10 @@ public:
         
         for(int i = 0; i < str.length(); i++)
         {
-            if((int)str[i] >= (int)'A' && (int)str[i] <= (int)'Z')
+            if((int)str[i] >= (int)'A' && (int)str[i] <= (int)'Z') //Check that we are in range of upper case letters to convert
             {
-                int characterConversion = lowerCaseOffset + (int)str[i];
-                result += (char)characterConversion;
+                int characterConversion = lowerCaseOffset + (int)str[i]; //Add the offset value to the upper case letter which moves it to the lowercase version of it
+                result += (char)characterConversion;  //cast back to character and add to the string
             }
             else
             {

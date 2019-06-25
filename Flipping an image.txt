@@ -18,14 +18,14 @@ Output: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
 Explanation: First reverse each row: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]].
 Then invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) 
     {
         
-        map<int, int> invertValue;
+        map<int, int> invertValue;  //Instead of having an conditional check for every value we map the invert version of it
         invertValue[0] = 1;
         invertValue[1] = 0;
         
@@ -34,13 +34,14 @@ public:
             int low = 0;
             int high =  A[i].size() - 1;
             
-            while (low <= high)
+            while (low <= high)     //Take each end of the vector and move towards the middle
             {
+		//Swap values from each end
                 int temp = A[i][low];
                 A[i][low] = A[i][high];
                 A[i][high] = temp;
                 
-                if(low != high)
+                if(low != high)  // Check that we are not siting in the middle of the vector with just one value
                 {
                     A[i][low] = invertValue[A[i][low]];
                     A[i][high] = invertValue[A[i][high]];

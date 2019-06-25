@@ -18,20 +18,20 @@ Note:
     S and J will consist of letters and have length at most 50.
     The characters in J are distinct.
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     int numJewelsInStones(string J, string S) 
     {
-        if(J.length() <= 0 || S.length() <= 0)
+        if(J.length() <= 0 || S.length() <= 0)  //Dont have jewels or stones then nothing to count here
             return 0;        
         
         int numStonesJewels = 0;
         
-        map<char, int> jewelCategoryMap;        
+        map<char, int> jewelCategoryMap;   //Find the char type of the jewel so we know is in the hashtable, the int value is irrelevant      
         
-        for(int i = 0; i< J.length(); i++)
+        for(int i = 0; i< J.length(); i++) // Add all the characters ( Jewel types) to the hash table 
         {
             jewelCategoryMap[J[i]] = 1;
         }
